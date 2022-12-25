@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 const version = 23;
 
 app.get("/", (req, res) => {
-    res.send(`hello from simple server :)😂, hello World version: ${version}`);
+    res.send(`hello from simple server :)😂, hello World`);
 });
 
 app.listen(port, () =>
