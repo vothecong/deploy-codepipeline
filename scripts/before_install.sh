@@ -1,15 +1,8 @@
 #!/bin/bash
+echo 'run before_install.sh: ' >> /home/ec2-user/deploy-codepipeline/deploy.log
 
-#download node and npm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-. ~/.nvm/nvm.sh
-nvm install node
+echo 'cd /home/ec2-user/deploy-codepipeline' >> /home/ec2-user/deploy-codepipeline/deploy.log
+cd /home/ec2-user/deploy-codepipeline >> /home/ec2-user/deploy-codepipeline/deploy.log
 
-#create our working directory if it doesnt exist
-DIR="/home/ec2-user/deploy-codepipeline"
-if [ -d "$DIR" ]; then
-  echo "${DIR} exists"
-else
-  echo "Creating ${DIR} directory"
-  mkdir ${DIR}
-fi
+echo 'npm install' >> /home/ec2-user/deploy-codepipeline/deploy.log 
+npm install >> /home/ec2-user/deploy-codepipeline/deploy.log
